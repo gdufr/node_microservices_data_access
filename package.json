@@ -1,0 +1,29 @@
+{
+  "name": "data-access",
+  "version": "1.0.0",
+  "description": "Data access layer library used to call data services such as SOAP, LDAP, database, etc. The DAL will be called from the Service Layer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reinstall": "for i in $(echo application-configuration cache data-access logging security services); do rm -rf node_modules/$i ; done && npm install",
+    "linklibs": "workingDirectory=\"$(pwd)\" && for libraryName in $(echo application-configuration cache error logging security services); do rm -rf $workingDirectory/node_modules/$libraryName && ln -s $workingDirectory/../$libraryName node_modules/$libraryName ; done"
+  },
+  "repository": {
+    "type": "git",
+    "data-access": "https://innersource.accenture.com/projects/NMI/repos/data-access"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "application-configuration": "git+ssh://git@innersource.accenture.com/nmi/application-configuration.git",
+    "bluebird": "^3.4.7",
+    "cache": "git+ssh://git@innersource.accenture.com/nmi/cache.git",
+    "ldapjs": "^1.0.1",
+    "logging": "git+ssh://git@innersource.accenture.com/nmi/logging.git",
+    "readable-stream": "^2.2.9",
+    "request-promise": "^4.2.1",
+    "soap": "^0.18.0",
+    "uuid": "^3.0.1",
+    "xml2js": "^0.4.17"
+  }
+}
